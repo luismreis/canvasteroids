@@ -1,4 +1,6 @@
 (function (exports) {
+  "use strict";
+
   var painter = exports.painter = function (canvas, options) {
     var ctx = canvas.getContext('2d');
     var windowWidth, windowHeight;
@@ -27,7 +29,7 @@
         w: 10,
         h: 10,
         hw: 10/2,
-        hh: 10/2,
+        hh: 10/2
       };
       this.d.p1 = { x: 0, y: 10 };
       this.d.p2 = { x: Math.cos(PI/4.0*5.0) * 10, y: Math.sin(PI/4.0*5.0) * 10 };
@@ -40,7 +42,7 @@
       this.direction = Math.random() * PI2;
       this.speed = Math.random() * maxSpeed + 1;
 
-      invertAngle = function(angle, o) {
+      var invertAngle = function (angle, o) {
         var a = angle;
         switch (o.axis.toLowerCase()) {
           case "y":
@@ -51,7 +53,7 @@
             break;
         }
         return angle;
-      }
+      };
 
       this.update = function() {
         self.x += (Math.cos(self.direction) * self.speed);
@@ -60,9 +62,10 @@
           self.direction = invertAngle(self.direction, { axis: "X" });
         }
         if (self.y >= windowHeight || self.y < 0) {
-          self.direction = invertAngle(self.direction, { axis: "Y" })
+          self.direction = invertAngle(self.direction, { axis: "Y" });
         }
-      }
+      };
+
       this.draw = function() {
         ctx.save();
         ctx.translate(self.x, self.y);
@@ -77,13 +80,13 @@
         ctx.stroke();
 
         ctx.restore();
-      }
-    }
+      };
+    };
 
     for(var i=0; i<20; i++) {
       foos.push(new Foo());
     }
-    var myFoo = new Foo({color: "rgb(0,0,200)"})
+    var myFoo = new Foo({ color: "rgb(0,0,200)" });
 
     var draw = exports.draw = function () {
       //ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
@@ -116,8 +119,8 @@
         myFoo.direction -= 0.1;
         break;
       }
-      while (myFoo.direction < 0) { myFoo.direction += PI2 };
-      while (myFoo.direction > PI2) { myFoo.direction -= PI2 };
+      while (myFoo.direction < 0) { myFoo.direction += PI2; }
+      while (myFoo.direction > PI2) { myFoo.direction -= PI2; }
 
     }
 

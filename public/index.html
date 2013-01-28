@@ -1,0 +1,25 @@
+<html>
+<head>
+  <style type="text/css">
+  body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script type="text/javascript" src="canvas.js"></script>
+  <script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+
+    Canvasteroids.painter(canvas);
+
+    setInterval(function() {
+      Canvasteroids.draw();
+      Canvasteroids.update();
+    }, 1000/60);
+  </script>
+</body>
+</html>

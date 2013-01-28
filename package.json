@@ -1,0 +1,37 @@
+{
+  "name": "canvasteroids",
+  "description" : "Canvasteroids demo.",
+  "author" : "Telmo Costa <telmo.ferreira.costa@gmail.com>",
+  "contributors" : [
+      "Luis Reis <luis.m.reis@gmail.com>"
+    ],
+  "version": "0.0.1",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/luismreis/canvasteroids/master/LICENSE"
+    }
+  ],
+  "repository" :
+    {
+      "type": "git",
+      "url": "https://github.com/luismreis/canvasteroids.git"
+    },
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "jade": "*",
+    "less-middleware": "*",
+    "openvg-canvas" : "*",
+    "node-html-encoder" : "*"
+  },
+  "devDependencies": {
+    "tap": "*",
+    "jslint": "*"
+  },
+  "engines": {
+    "node": "~0.8"
+  }
+}

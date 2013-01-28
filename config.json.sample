@@ -1,0 +1,6 @@
+{
+  "renderers" : {
+    "canvas" : true,
+    "webapp" : false
+  }
+}
